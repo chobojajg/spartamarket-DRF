@@ -1,8 +1,8 @@
-from django.shortcuts import render
-from django.core.cache import cache
-from rest_framework.decorators import api_view
+from django.contrib.auth import logout
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework_simplejwt.tokens import RefreshToken
+
 from .serializers import UserSerializer
 from rest_framework import status
 from django.contrib.auth.hashers import make_password
@@ -23,6 +23,8 @@ class SignUpAPIView(APIView):
 class ProfileAPIView(APIView):
     permission_classes = [IsAuthenticated]
     def get(self, request, username):
-        profile = get_object_or_404(User, username=username)
-        serializer = UserSerializer(profile)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        if str(request.user) == username:
+            profile = get_object_or_404(User, username=username)
+            serializer = UserSerializer(profile)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(status=status.HTTP_400_BAD_REQUEST)

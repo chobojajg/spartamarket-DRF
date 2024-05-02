@@ -1,4 +1,4 @@
-# 기본 기능 구현중 - 제출 안까먹게 미리 제출
+# 기본기능 구현 완 - 추가기능 시도중
 # spartamarket-DRF
 우리를 위한 중고거래 :: 스파르타 마켓(DRF)
 
@@ -27,7 +27,7 @@ django\
 
 <img src="static/images/loginview.PNG" alt="왜안뜸"/>
 
-프로필 조회- 
+프로필 조회-
 - **Endpoint**: **`/api/accounts/<str:username>`**
 - **Method**: **`GET`**
 
@@ -37,22 +37,31 @@ django\
 - **Endpoint**: **`/api/products`**
 - **Method**: **`POST`**
 
-<img src="static/images/#" alt="왜안뜸"/>
+성공\
+<img src="static/images/productcreate.PNG" alt="왜안뜸"/>\
+실패\
+<img src="static/images/productcreatefail.PNG" alt="왜안뜸"/>
 
 상품 목록 조회
 - **Endpoint**: **`/api/products`**
 - **Method**: **`GET`**
 
-<img src="static/images/#" alt="왜안뜸"/>
+<img src="static/images/productlist.PNG" alt="왜안뜸"/>
 
 상품 수정
 - **Endpoint**: **`/api/products/<int:productId>`**
 - **Method**: **`PUT`**
 
-<img src="static/images/#" alt="왜안뜸"/>
+성공\
+<img src="static/images/productupdate.PNG" alt="왜안뜸"/>\
+실패\
+<img src="static/images/productupdatefail.PNG" alt="왜안뜸"/>
 
 상품 삭제
 - **Endpoint**: **`/api/products/<int:productId>`**
 - **Method**: **`DELETE`**
 
-<img src="static/images/#" alt="왜안뜸"/>
+성공\
+<img src="static/images/productdelete.PNG" alt="왜안뜸"/>\
+실패\
+<img src="static/images/productdeletefail.PNG" alt="왜안뜸"/>
